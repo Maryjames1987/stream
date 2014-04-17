@@ -1,0 +1,103 @@
+=== Check and build stream ===
+
+=== Testing up to 16 cores ===
+
+-------------------------------------------------------------
+STREAM version $Revision: 5.10 $
+-------------------------------------------------------------
+This system uses 8 bytes per array element.
+-------------------------------------------------------------
+*****  WARNING: ******
+      It appears that you set the preprocessor variable N when compiling this code.
+      This version of the code uses the preprocesor variable STREAM_ARRAY_SIZE to control the array size
+      Reverting to default value of STREAM_ARRAY_SIZE=10000000
+*****  WARNING: ******
+Array size = 10000000 (elements), Offset = 0 (elements)
+Memory per array = 76.3 MiB (= 0.1 GiB).
+Total memory required = 228.9 MiB (= 0.2 GiB).
+Each kernel will be executed 10 times.
+ The *best* time for each kernel (excluding the first iteration)
+ will be used to compute the reported bandwidth.
+-------------------------------------------------------------
+Number of Threads requested = 1
+Number of Threads counted = 1
+-------------------------------------------------------------
+Your clock granularity/precision appears to be 1 microseconds.
+Each test below will take on the order of 13127 microseconds.
+   (= 13127 clock ticks)
+Increase the size of the arrays if this shows that
+you are not getting at least 20 clock ticks per test.
+-------------------------------------------------------------
+WARNING -- The above is only a rough guideline.
+For best results, please be sure you know the
+precision of your system timer.
+-------------------------------------------------------------
+Function    Best Rate MB/s  Avg time     Min time     Max time
+Copy:            9019.2     0.018525     0.017740     0.018949
+Scale:           8725.1     0.018743     0.018338     0.019013
+Add:            10115.9     0.024348     0.023725     0.025211
+Triad:           9862.3     0.025019     0.024335     0.025599
+-------------------------------------------------------------
+Solution Validates
+-------------------------------------------------------------
+
+Number of Threads requested = 2
+Function      Rate (MB/s)   Avg time     Min time     Max time
+Triad:      13004.2011       0.2892       0.2854       0.2946
+
+Number of Threads requested = 3
+Function      Rate (MB/s)   Avg time     Min time     Max time
+Triad:      13783.8305       0.2711       0.2693       0.2729
+
+Number of Threads requested = 4
+Function      Rate (MB/s)   Avg time     Min time     Max time
+Triad:      14072.9856       0.2651       0.2638       0.2691
+
+Number of Threads requested = 5
+Function      Rate (MB/s)   Avg time     Min time     Max time
+Triad:      14091.5185       0.2642       0.2634       0.2652
+
+Number of Threads requested = 6
+Function      Rate (MB/s)   Avg time     Min time     Max time
+Triad:      14098.9581       0.2654       0.2633       0.2715
+
+Number of Threads requested = 7
+Function      Rate (MB/s)   Avg time     Min time     Max time
+Triad:      14035.7745       0.2661       0.2645       0.2673
+
+Number of Threads requested = 8
+Function      Rate (MB/s)   Avg time     Min time     Max time
+Triad:      13973.0670       0.2670       0.2657       0.2687
+
+Number of Threads requested = 9
+Function      Rate (MB/s)   Avg time     Min time     Max time
+Triad:      13839.2848       0.2696       0.2682       0.2709
+
+Number of Threads requested = 10
+Function      Rate (MB/s)   Avg time     Min time     Max time
+Triad:      13921.9259       0.2692       0.2666       0.2720
+
+Number of Threads requested = 11
+Function      Rate (MB/s)   Avg time     Min time     Max time
+Triad:      13907.4627       0.2691       0.2669       0.2719
+
+Number of Threads requested = 12
+Function      Rate (MB/s)   Avg time     Min time     Max time
+Triad:      13880.6432       0.2702       0.2674       0.2739
+
+Number of Threads requested = 13
+Function      Rate (MB/s)   Avg time     Min time     Max time
+Triad:      13832.0552       0.2706       0.2684       0.2726
+
+Number of Threads requested = 14
+Function      Rate (MB/s)   Avg time     Min time     Max time
+Triad:      13804.4360       0.2714       0.2689       0.2756
+
+Number of Threads requested = 15
+Function      Rate (MB/s)   Avg time     Min time     Max time
+Triad:      13765.3794       0.2709       0.2697       0.2726
+
+Number of Threads requested = 16
+Function      Rate (MB/s)   Avg time     Min time     Max time
+Triad:      13688.6838       0.2720       0.2712       0.2736
+

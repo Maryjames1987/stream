@@ -1,0 +1,42 @@
+Stream Benchmark
+
+Uses the STREAM benchmark and stream-scaling automation scripts to measure 
+memory performance. STREAM is a simple synthetic benchmark program that 
+measures sustainable memory bandwidth. The STREAM benchmark consists of four 
+tests:
+
+Copy -  measures transfer rates in the absence of arithmetic
+Scale - adds a simple arithmetic operation
+Add -   adds a third operand to allow multiple load/store ports on vector 
+        machines to be tested
+Triad - allows chained/overlapped/fused multiply/add operations
+
+stream-scaling detects the number of CPUs in the system and how large each of 
+their caches are. It then downloads STREAM, compiles it, and runs it with an 
+array size large enough to not fit into cache. The number of threads is varied 
+from 1 to the total number of cores in the server, so that you can see how 
+memory speed scales as cores involved increase.
+
+
+GNUPLOT
+A gnuplot graph will be generated for threaded triad results if gnuplot is 
+installed. This graphs will be named triad-graph.png and created in each 
+benchmark iteration directory.
+
+
+RUNTIME PARAMETERS
+None
+
+
+RESULT METRICS
+array_size                Array size used for testing
+memory_per_array          Memory per array
+memory_required           Total memory required
+stream_add                Single thread STREAM Add throughput (Megabytes/sec)
+stream_copy               Single thread STREAM Copy throughput (Megabytes/sec)
+stream_max_threads        Max number of threads that testing was performed for
+stream_max_triad          Max STREAM Triad throughput for any thread count (Megabytes/sec)
+stream_max_triad_threads  Thread count where stream_max_triad was achieved
+stream_scale              Single thread STREAM Scale throughput (Megabytes/sec)
+stream_triad              Single thread STREAM Triad throughput (Megabytes/sec)
+stream_triadN             Multithreaded STREAM Triad throughput (Megabytes/sec) - N=# of threads
