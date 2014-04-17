@@ -33,10 +33,22 @@ array_size                Array size used for testing
 memory_per_array          Memory per array
 memory_required           Total memory required
 stream_add                Single thread STREAM Add throughput (Megabytes/sec)
+stream_add_avg_time       Average time for STREAM Add tests
+stream_add_min_time       Min time for STREAM Add tests
+stream_add_max_time       Max time for STREAM Add tests
 stream_copy               Single thread STREAM Copy throughput (Megabytes/sec)
+stream_copy_avg_time      Average time for STREAM Copy tests
+stream_copy_min_time      Min time for STREAM Copy tests
+stream_copy_max_time      Max time for STREAM Copy tests
 stream_max_threads        Max number of threads that testing was performed for
 stream_max_triad          Max STREAM Triad throughput for any thread count (Megabytes/sec)
 stream_max_triad_threads  Thread count where stream_max_triad was achieved
 stream_scale              Single thread STREAM Scale throughput (Megabytes/sec)
+stream_scale_avg_time     Average time for STREAM Scale tests
+stream_scale_min_time     Min time for STREAM Scale tests
+stream_scale_max_time     Max time for STREAM Scale tests
 stream_triad              Single thread STREAM Triad throughput (Megabytes/sec)
+stream_triad_avg_time     Average time for STREAM Triad tests
+stream_triad_min_time     Min time for STREAM Triad tests
+stream_triad_max_time     Max time for STREAM Triad tests
 stream_triadN             Multithreaded STREAM Triad throughput (Megabytes/sec) - N=# of threads
