@@ -108,8 +108,6 @@ present, the triad results graphs will not be generated.
   gnuplot     Used to generate triad results graphs
   
   php         Used for automation and saving of results
-  
-  wget        Used to download the STREAM source
 
 
 TEST ARTIFACTS
@@ -188,10 +186,10 @@ EXIT CODES:
 
 EOF
   exit
-elif [ -f "/usr/bin/php" ] && [ -f "/usr/bin/gcc" ] && [ -f "/usr/bin/wget" ]; then
+elif [ -f "/usr/bin/php" ] && [ -f "/usr/bin/gcc" ]; then
   $( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/lib/run.php $@
   exit $?
 else
-  echo "Error: missing dependency php-cli (/usr/bin/php), gcc (/usr/bin/gcc) or wget (/usr/bin/wget)"
+  echo "Error: missing dependency php-cli (/usr/bin/php), gcc (/usr/bin/gcc)"
   exit 1
 fi

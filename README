@@ -90,8 +90,6 @@ present, the triad results graphs will not be generated.
   gnuplot     Used to generate triad results graphs
   
   php         Used for automation and saving of results
-  
-  wget        Used to download the STREAM source
 
 
 TEST ARTIFACTS
