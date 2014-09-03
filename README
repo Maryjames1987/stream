@@ -85,10 +85,8 @@ This benchmark has the following dependencies. gnuplot is optional. If not
 present, the triad results graphs will not be generated.
 
   gcc         Used to compile STREAM
-  
   gnuplot     Used to generate triad results graphs
-  
-  php         Used for automation and saving of results
+  php-cli     Test automation scripts (/usr/bin/php)
 
 
 TEST ARTIFACTS
@@ -161,7 +159,7 @@ for i in {1..10}; do mkdir -p ~/stream-testing/$i; ./run.sh --output ~/stream-te
 
 
 # save.sh saves results to CSV, MySQL, PostgreSQL, BigQuery or via HTTP 
-# callback. It can also save artifacts (PDF and ZIP reports) to S3, Azure
+# callback. It can also save artifacts (Triad gnuplot graph) to S3, Azure
 # Blob Storage or Google Cloud Storage
 
 # save results to CSV files
