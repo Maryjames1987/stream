@@ -77,8 +77,7 @@ attributes. These will be included with the results (see save.sh)
                             specified, the current working directory will be 
                             used
                             
-* verbose                   Show verbose output - warning: this may produce a 
-                            lot of output
+* verbose                   Show verbose output
 
 
 DEPENDENCIES
