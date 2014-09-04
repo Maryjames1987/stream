@@ -1,0 +1,8 @@
+# Ubuntu
+sudo apt-get -y install gcc php5-cli gnuplot
+git clone git://github.com/cloudharmony/stream.git
+
+
+# CentOS
+sudo yum -y install gcc php-cli gnuplot
+git clone git://github.com/cloudharmony/stream.git
