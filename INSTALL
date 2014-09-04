@@ -6,3 +6,8 @@ git clone git://github.com/cloudharmony/stream.git
 # CentOS
 sudo yum -y install gcc php-cli gnuplot
 git clone git://github.com/cloudharmony/stream.git
+
+
+# Setup BigQuery (see save.sh)
+curl https://sdk.cloud.google.com | bash
+gcloud auth login
