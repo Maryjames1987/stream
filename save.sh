@@ -115,6 +115,10 @@ line delimited config file located in ~/.ch_benchmark (e.g. db_host=localhost)
                             PostgreSQL, the permissions are the same except 
                             that the user needs copy permissions in place of
                             MySQL load data infile
+                            
+--iteration                 Explicit iteration number for test results - 
+                            otherwise 1 will be assumed unless results are in 
+                            numbered sub-directories
 
 --output                    The output directory to use for writing CSV files.
                             If not specified, the current working directory 
