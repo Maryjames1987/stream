@@ -25,6 +25,18 @@ TESTING PARAMETERS
 Test behavior is fixed, but you may specify the following optional meta 
 attributes. These will be included with the results (see save.sh)
 
+* collectd_rrd              If set, collectd rrd stats will be captured from 
+                            --collectd_rrd_dir. To do so, when testing starts,
+                            existing directories in --collectd_rrd_dir will 
+                            be renamed to .bak, and upon test completion 
+                            any directories not ending in .bak will be zipped
+                            and saved along with other test artifacts (as 
+                            collectd-rrd.zip). User MUST have sudo privileges
+                            to use this option
+                            
+* collectd_rrd_dir          Location where collectd rrd files are stored - 
+                            default is /var/lib/collectd/rrd
+
 * meta_compute_service      The name of the compute service this test pertains
                             to. May also be specified using the environment 
                             variable bm_compute_service
@@ -87,10 +99,13 @@ present, the triad results graphs will not be generated.
   gcc         Used to compile STREAM
   gnuplot     Used to generate triad results graphs
   php-cli     Test automation scripts (/usr/bin/php)
+  zip         Used to compress test artifacts
 
 
 TEST ARTIFACTS
 This benchmark generates the following artifacts:
+
+collectd-rrd.zip   collectd RRD files (see --collectd_rrd)
 
 triad-graph.png    A gnuplot graph generated from threaded triad results
 
@@ -104,6 +119,7 @@ removed using the save.sh --remove parameter
 
 array_size: [array size used for testing]
 benchmark_version: [benchmark version]
+collectd_rrd: [URL to zip file containing collectd rrd files]
 iteration: [iteration number (used with incremental result directories)]
 memory_per_array: [memory per array]
 memory_required: [total memory required]

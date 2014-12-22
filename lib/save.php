@@ -21,7 +21,7 @@
 require_once(dirname(__FILE__) . '/StreamTest.php');
 require_once(dirname(__FILE__) . '/save/BenchmarkDb.php');
 $status = 1;
-$args = parse_args(array('iteration:', 'v' => 'verbose'));
+$args = parse_args(array('iteration:', 'nostore_png', 'nostore_rrd', 'v' => 'verbose'));
 
 // get result directories => each directory stores 1 iteration of results
 $dirs = array();
@@ -41,10 +41,10 @@ if ($db =& BenchmarkDb::getDb()) {
       $results['iteration'] = $iteration;
       print_msg(sprintf('Saving results in directory %s', $dir), isset($args['verbose']), __FILE__, __LINE__);
       // save report.pdf and report.zip
-      foreach(array('triad-graph.png') as $file) {
+      foreach(array('nostore_png' => 'triad-graph.png', 'nostore_rrd' => 'collectd-rrd.zip') as $arg => $file) {
         $file = sprintf('%s/%s', $dir, $file);
-        if (file_exists($file)) {
-          $col = 'triad_png';
+        if (!isset($args[$arg]) && file_exists($file)) {
+          $col = $arg == 'nostore_rrd' ? 'collectd_rrd' : 'triad_png';
           $saved = $db->saveArtifact($file, $col);
           if ($saved) print_msg(sprintf('Saved %s successfully', basename($file)), isset($args['verbose']), __FILE__, __LINE__);
           else if ($saved === NULL) print_msg(sprintf('Unable to save %s', basename($file)), isset($args['verbose']), __FILE__, __LINE__, TRUE);
