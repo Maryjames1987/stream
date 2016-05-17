@@ -240,7 +240,7 @@ function stream_array_elements {
     # results at the upper-end of the processor count seem extremely large
     # relative to similar systems.
 
-    #NEEDED_SIZE=$MAX_ARRAY_SIZE
+    NEEDED_SIZE=$MAX_ARRAY_SIZE
 
     echo WARNING:  Array size may not fit into a 32 bit structure.
     echo If stream files to compile, you may need to uncomment the
