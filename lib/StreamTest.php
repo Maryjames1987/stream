@@ -168,7 +168,7 @@ class StreamTest {
     $success = FALSE;
     
     $this->options['test_started'] = date('Y-m-d H:i:s');
-    $handle = popen($cmd = sprintf('cd %s;%s/stream-scaling/stream-scaling 2>/dev/null', $this->options['output'], dirname(dirname(__FILE__))), 'r');
+    $handle = popen($cmd = sprintf('cd %s;cp %s/stream-scaling/* ./;./stream-scaling 2>/dev/null', $this->options['output'], dirname(dirname(__FILE__))), 'r');
     if ($handle && ($line = fgets($handle))) {
       if ($fp = fopen($ofile = sprintf('%s/%s', $this->options['output'], self::STREAM_TEST_TEST_FILE_NAME), 'w')) {
         $success = TRUE;
@@ -183,8 +183,8 @@ class StreamTest {
       }
       else print_msg(sprintf('Unable to open file pointer to %s', $ofile), isset($this->options['verbose']), __FILE__, __LINE__, TRUE);
       fclose($handle);
-      exec(sprintf('rm -f %s/stream', $this->options['output']));
-      exec(sprintf('rm -f %s/stream.c', $this->options['output']));
+      exec(sprintf('cd %s;rm -f multi-averager multi-stream-scaling README.rst stream-graph.py stream-plot stream-scaling stream.c stream', $this->options['output']));
+      
       if ($rrdStarted) ch_collectd_rrd_stop($this->options['collectd_rrd_dir'], $this->options['output'], isset($this->options['verbose']));
       $this->endTest();
     }

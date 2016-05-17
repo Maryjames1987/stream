@@ -306,7 +306,7 @@ fi
 echo
 echo === Check and build stream ===
 if [ ! -f stream.c ] ; then
-  wget http://www.cs.virginia.edu/stream/FTP/Code/stream.c
+  wget http://web.mit.edu/freebsd/csup/stream.c
 fi
 
 # Since the array size is fixed at compile time, we have to
